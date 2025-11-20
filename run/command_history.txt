@@ -1,0 +1,5 @@
+/datapack list
+/summon minecraft:warden
+/summon minecraft:iron_golem
+/effect give Player836 minecraft:strength infinite 200
+/summon minecraft:iron_golem
