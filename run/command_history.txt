@@ -1,5 +1,50 @@
-/datapack list
-/summon minecraft:warden
-/summon minecraft:iron_golem
-/effect give Player836 minecraft:strength infinite 200
-/summon minecraft:iron_golem
+/mapf goal Agent1 55 86
+/mapf start
+/mapf reset
+/mapf arena 63 33 keep
+/mapf algo whca
+/mapf agent 15ea1cef-45bb-4dce-ae42-c1e75985be1c
+/mapf agent 7e5dc005-0164-4818-a44f-1299072527da
+/mapf goal Agent1 55 86
+/mapf goal Agent2 85 86
+/mapf start
+/mapf reset
+/mapf agent 15ea1cef-45bb-4dce-ae42-c1e75985be1c
+/mapf agent 7e5dc005-0164-4818-a44f-1299072527da
+/mapf arena 63 33 keep
+/mapf algo cbs
+/mapf goal Agent2 85 86
+/mapf goal Agent1 55 86
+/mapf start
+/mapf reset
+/mapf arena 63 33 keep
+/mapf agent d077b10f-339c-41c7-a2b8-cecab8db7c7d
+/mapf agent f0cfcbb0-0cd1-4629-8741-13e524d22567
+/mapf algo cbs
+/mapf goal Agent1 55 86
+/mapf goal Agent2 85 86
+/mapf start
+/mapf reset
+/mapf arena 63 33 keep
+/mapf algo single
+/mapf agent 3e1815a7-47d4-49df-a4b4-40c9a9451599
+/mapf agent 63de7552-2b61-4b70-bef9-4d00a7bb3c2e
+/mapf goal Agent1 85 86
+/mapf goal Agent2 55 86
+/mapf algo whca
+/mapf window 80
+/mapf replan 10
+/mapf start
+/mapf list
+/mapf reset
+/mapf arena 63 33 keep
+/mapf algo whca
+/mapf agent e61991a8-8d9e-4db2-bd4c-d0a3c938eda9
+/mapf agent fecd3ffd-a604-492d-87a6-6882f87d155c
+/mapf label smoke1
+/mapf window 80
+/mapf replan 10
+/mapf goal Agent1 85 86
+/mapf goal Agent2 55 86
+/mapf start
+/mapf reset

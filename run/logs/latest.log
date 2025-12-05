@@ -1,5 +1,5 @@
-[18:52:02] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.10 with Fabric Loader 0.17.3
-[18:52:02] [main/INFO] (FabricLoader) Loading 51 mods:
+[08:04:36] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.10 with Fabric Loader 0.17.3
+[08:04:36] [main/INFO] (FabricLoader) Loading 51 mods:
 	- fabric-api 0.136.0+1.21.10
 	- fabric-api-base 1.0.0+14b92d896f
 	- fabric-api-lookup-api-v1 1.6.106+d17682156f
@@ -51,16 +51,17 @@
 	- mapf_mod 1.0.0
 	- minecraft 1.21.10
 	- mixinextras 0.5.0
-[18:52:02] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/hotin/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/80fc3a9f592673cea87f4cd702f87991c6c9fe4d/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[18:52:02] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[18:52:02] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[18:52:03] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
-[18:52:04] [Datafixer Bootstrap/INFO] (Minecraft) 278 Datafixer optimizations took 297 milliseconds
-[18:52:08] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[18:52:08] [Render thread/INFO] (Minecraft) Setting user: Player209
-[18:52:08] [Render thread/INFO] (mapf_mod) Hello Fabric world!
-[18:52:08] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[18:52:08] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
+[08:04:36] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/hotin/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/80fc3a9f592673cea87f4cd702f87991c6c9fe4d/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[08:04:36] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[08:04:36] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[08:04:36] [main/WARN] (FabricLoader/Mixin) Reference map 'mapf_mod.refmap.json' for mapf_mod.mixins.json could not be read. If this is a development environment you can ignore this message
+[08:04:37] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[08:04:38] [Datafixer Bootstrap/INFO] (Minecraft) 278 Datafixer optimizations took 324 milliseconds
+[08:04:42] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[08:04:42] [Render thread/INFO] (Minecraft) Setting user: Player134
+[08:04:42] [Render thread/INFO] (mapf_mod) Hello Fabric world!
+[08:04:42] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[08:04:42] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at knot/com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:59) ~[authlib-7.0.61.jar:?]
 	at knot/com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:150) ~[authlib-7.0.61.jar:?]
@@ -74,14 +75,14 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at knot/com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:56) ~[authlib-7.0.61.jar:?]
 	at knot/com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:121) ~[authlib-7.0.61.jar:?]
 	... 5 more
-[18:52:09] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
-[18:52:09] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
-[18:52:09] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, mapf_mod
-[18:52:10] [Worker-Main-13/INFO] (Minecraft) Found unifont_pua-16.0.03.hex, loading
-[18:52:10] [Worker-Main-2/INFO] (Minecraft) Found unifont_all_no_pua-16.0.03.hex, loading
-[18:52:10] [Worker-Main-7/INFO] (Minecraft) Found unifont_jp_patch-16.0.03.hex, loading
-[18:52:10] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[18:52:10] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
+[08:04:42] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[08:04:43] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+[08:04:43] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, mapf_mod
+[08:04:43] [Worker-Main-15/INFO] (Minecraft) Found unifont_all_no_pua-16.0.03.hex, loading
+[08:04:43] [Worker-Main-6/INFO] (Minecraft) Found unifont_pua-16.0.03.hex, loading
+[08:04:43] [Worker-Main-8/INFO] (Minecraft) Found unifont_jp_patch-16.0.03.hex, loading
+[08:04:44] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[08:04:44] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot/com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:536) ~[minecraft-clientOnly-42d054c137-1.21.10-loom.mappings.1_21_10.layered+hash.2198-v2.jar:?]
 	at knot/com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:189) ~[minecraft-clientOnly-42d054c137-1.21.10-loom.mappings.1_21_10.layered+hash.2198-v2.jar:?]
@@ -89,23 +90,23 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
-[18:52:10] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (Logitech G733 Gaming Headset)
-[18:52:10] [Render thread/INFO] (Minecraft) Sound engine started
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/chest.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/signs.png-atlas
-[18:52:10] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:52:11] [IO-Worker-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[18:52:11] [IO-Worker-1/ERROR] (Minecraft) Couldn't connect to realms
+[08:04:44] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (Logitech G733 Gaming Headset)
+[08:04:44] [Render thread/INFO] (Minecraft) Sound engine started
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/chest.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/signs.png-atlas
+[08:04:44] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[08:04:44] [IO-Worker-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[08:04:44] [IO-Worker-1/ERROR] (Minecraft) Couldn't connect to realms
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot/com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:536) ~[minecraft-clientOnly-42d054c137-1.21.10-loom.mappings.1_21_10.layered+hash.2198-v2.jar:?]
 	at knot/com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:316) ~[minecraft-clientOnly-42d054c137-1.21.10-loom.mappings.1_21_10.layered+hash.2198-v2.jar:?]
@@ -114,4 +115,149 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
-[19:10:44] [Render thread/INFO] (Minecraft) Stopping!
+[08:06:56] [Render thread/INFO] (Minecraft) Loaded 1461 recipes
+[08:06:56] [Render thread/INFO] (Minecraft) Loaded 1574 advancements
+[08:06:56] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 65 new biomes in 1.536 ms
+[08:06:56] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.10
+[08:06:56] [Server thread/INFO] (Minecraft) Generating keypair
+[08:06:57] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[08:06:57] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[08:06:57] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[08:06:57] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[08:06:57] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager 257fa0fa-6d02-4d36-afac-5a8b868cb279
+[08:06:57] [Server thread/INFO] (Minecraft) Time elapsed: 941 ms
+[08:06:58] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager d51fa143-699e-459d-b350-e74aa076ee9a
+[08:06:58] [Server thread/INFO] (Minecraft) Player134[local:E:470f7cef] logged in with entity id 61 at (86.28438951869072, 65.53292827534491, 84.44043085532932)
+[08:06:58] [Server thread/INFO] (Minecraft) Player134 joined the game
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[08:06:58] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[08:06:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[08:06:58] [Render thread/INFO] (Minecraft) Loaded 15 advancements
+[08:06:58] [Render thread/WARN] (Minecraft) Unable to play empty soundEvent: minecraft:entity.salmon.ambient
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[08:06:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[08:06:59] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[08:06:59] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
+[08:06:59] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 1024 reached during a single frame. New capacity will be 2048.
+[08:07:03] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF] State reset.
+[08:07:03] [Server thread/INFO] (Minecraft) [Player134: MAPF state reset.]
+[08:07:03] [Render thread/INFO] (Minecraft) [System] [CHAT] MAPF state reset.
+[08:07:05] [Server thread/INFO] (Minecraft) Villager Villager['Agent1'/4, l='ServerLevel[MAPF Test2]', x=82.44, y=63.00, z=87.70] died, message: 'Agent1 was slain by Player134'
+[08:07:05] [Server thread/INFO] (Minecraft) Named entity Villager['Agent1'/4, l='ServerLevel[MAPF Test2]', x=82.44, y=63.00, z=87.70] died: Agent1 was slain by Player134
+[08:07:05] [Render thread/INFO] (Minecraft) Villager Villager['Agent1'/4, l='ClientLevel', x=82.69, y=63.51, z=87.70] died, message: 'Agent1 died'
+[08:07:05] [Render thread/INFO] (Minecraft) Loaded 53 advancements
+[08:07:08] [Render thread/INFO] (Minecraft) Loaded 53 advancements
+[08:07:08] [Server thread/INFO] (Minecraft) Villager Villager['Agent2'/43, l='ServerLevel[MAPF Test2]', x=54.30, y=63.00, z=85.97] died, message: 'Agent2 was slain by Player134'
+[08:07:08] [Server thread/INFO] (Minecraft) Named entity Villager['Agent2'/43, l='ServerLevel[MAPF Test2]', x=54.30, y=63.00, z=85.97] died: Agent2 was slain by Player134
+[08:07:08] [Render thread/INFO] (Minecraft) Villager Villager['Agent2'/43, l='ClientLevel', x=54.30, y=63.58, z=86.05] died, message: 'Agent2 died'
+[08:07:18] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF] Arena set: y=63 bounds=[54,55]..[86,87]
+[08:07:18] [Server thread/INFO] (Minecraft) [Player134: Arena set (keep interior): y=63 size=33 bounds=[54,55]..[86,87]]
+[08:07:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena set (keep interior): y=63 size=33 bounds=[54,55]..[86,87]
+[08:07:26] [Server thread/INFO] (Minecraft) [Player134: Planner set to WHCA]
+[08:07:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Planner set to WHCA
+[08:07:28] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager 6e375468-255d-442a-b814-bf01f5671a06
+[08:07:29] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager fba610b7-4787-498f-94b8-0e91a1727a8b
+[08:07:34] [Server thread/INFO] (Minecraft) Villager Villager['Villager'/367, l='ServerLevel[MAPF Test2]', x=80.16, y=63.00, z=55.45] died, message: 'Villager was slain by Player134'
+[08:07:34] [Render thread/INFO] (Minecraft) Villager Villager['Villager'/367, l='ClientLevel', x=80.96, y=63.00, z=55.32] died, message: 'Villager died'
+[08:07:36] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager e61991a8-8d9e-4db2-bd4c-d0a3c938eda9
+[08:07:44] [Server thread/INFO] (Minecraft) [Player134: Added Agent1: e61991a8-8d9e-4db2-bd4c-d0a3c938eda9]
+[08:07:44] [Render thread/INFO] (Minecraft) [System] [CHAT] Added Agent1: e61991a8-8d9e-4db2-bd4c-d0a3c938eda9
+[08:07:44] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF] Goal start for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9
+[08:07:49] [Server thread/INFO] (Minecraft) [MAPF] Registered CooperativeNavigateGoal on villager fecd3ffd-a604-492d-87a6-6882f87d155c
+[08:07:57] [Server thread/INFO] (Minecraft) [Player134: Added Agent2: fecd3ffd-a604-492d-87a6-6882f87d155c]
+[08:07:57] [Render thread/INFO] (Minecraft) [System] [CHAT] Added Agent2: fecd3ffd-a604-492d-87a6-6882f87d155c
+[08:07:57] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF] Goal start for fecd3ffd-a604-492d-87a6-6882f87d155c
+[08:08:00] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2048 reached during a single frame. New capacity will be 4096.
+[08:08:04] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:08:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:08:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:08:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:08:18] [Server thread/INFO] (Minecraft) [Player134: Label set: smoke1]
+[08:08:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Label set: smoke1
+[08:08:24] [Server thread/INFO] (Minecraft) [Player134: WHCA* window = 80]
+[08:08:24] [Render thread/INFO] (Minecraft) [System] [CHAT] WHCA* window = 80
+[08:08:30] [Server thread/INFO] (Minecraft) [Player134: Replan period = 10 ticks]
+[08:08:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Replan period = 10 ticks
+[08:08:38] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:08:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:08:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:08:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:08:42] [Server thread/INFO] (Minecraft) [Player134: Set goal for Agent1 -> (85,86)]
+[08:08:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Set goal for Agent1 -> (85,86)
+[08:08:46] [Server thread/INFO] (Minecraft) [Player134: Set goal for Agent2 -> (55,86)]
+[08:08:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Set goal for Agent2 -> (55,86)
+[08:08:54] [Server thread/INFO] (Minecraft) [Player134: MAPF started.]
+[08:08:54] [Render thread/INFO] (Minecraft) [System] [CHAT] MAPF started.
+[08:08:54] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 79 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,55) now=166840
+[08:08:54] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 81 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(54,55) now=166840
+[08:08:54] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 76 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,58) now=166850
+[08:08:54] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 80 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(54,58) now=166850
+[08:08:55] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 72 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,62) now=166860
+[08:08:55] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 75 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(55,62) now=166860
+[08:08:55] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 69 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,65) now=166870
+[08:08:55] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 71 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(55,66) now=166870
+[08:08:56] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 65 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,69) now=166880
+[08:08:56] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 67 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(55,70) now=166880
+[08:08:56] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 62 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(86,72) now=166890
+[08:08:56] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 62 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(56,74) now=166890
+[08:08:57] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 57 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(84,75) now=166900
+[08:08:57] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 57 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(60,75) now=166900
+[08:08:57] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 53 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(81,76) now=166910
+[08:08:57] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 53 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(64,75) now=166910
+[08:08:58] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 48 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(76,76) now=166920
+[08:08:58] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 48 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(69,75) now=166920
+[08:08:58] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 44 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(72,76) now=166930
+[08:08:58] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 44 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(70,78) now=166930
+[08:08:59] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 40 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(70,78) now=166940
+[08:08:59] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 40 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(68,80) now=166940
+[08:08:59] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 36 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(72,80) now=166950
+[08:08:59] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 36 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(67,77) now=166950
+[08:09:00] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 32 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(76,80) now=166960
+[08:09:00] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 33 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(65,78) now=166960
+[08:09:00] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 27 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(77,84) now=166970
+[08:09:00] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 29 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(62,79) now=166970
+[08:09:01] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 24 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(79,83) now=166980
+[08:09:01] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 25 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(59,78) now=166980
+[08:09:01] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 20 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(81,81) now=166990
+[08:09:01] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 21 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(57,80) now=166990
+[08:09:02] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 16 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(81,85) now=167000
+[08:09:02] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 16 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(54,82) now=167000
+[08:09:02] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 12 steps for e61991a8-8d9e-4db2-bd4c-d0a3c938eda9 first=(84,86) now=167010
+[08:09:02] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF][WHCA] planned 12 steps for fecd3ffd-a604-492d-87a6-6882f87d155c first=(54,86) now=167010
+[08:09:07] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:09:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:09:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:09:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:09:24] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:09:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:09:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:09:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:10:08] [Server thread/INFO] (Minecraft) [STDOUT]: [MAPF] State reset.
+[08:10:08] [Server thread/INFO] (Minecraft) [Player134: MAPF state reset.]
+[08:10:08] [Render thread/INFO] (Minecraft) [System] [CHAT] MAPF state reset.
+[08:10:09] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:10:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:10:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:10:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:11:15] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[08:11:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:11:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:11:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:11:48] [Server thread/INFO] (Minecraft) Player134 lost connection: Disconnected
+[08:11:48] [Server thread/INFO] (Minecraft) Player134 left the game
+[08:11:48] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[08:11:48] [Server thread/INFO] (Minecraft) Stopping server
+[08:11:48] [Server thread/INFO] (Minecraft) Saving players
+[08:11:48] [Server thread/INFO] (Minecraft) Saving worlds
+[08:11:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:overworld
+[08:11:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_end
+[08:11:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[MAPF Test2]'/minecraft:the_nether
+[08:11:49] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (MAPF Test2): All chunks are saved
+[08:11:49] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[08:11:49] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[08:11:49] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[08:11:50] [Render thread/INFO] (Minecraft) Stopping!

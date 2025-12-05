@@ -1,38 +1,16 @@
 {
-	"schemaVersion": 1,
-	"id": "mapf_mod",
-	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-
-	"license": "CC0-1.0",
-	"icon": "assets/mapf_mod/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.tin.ExampleMod"
-		],
-		"client": [
-			"com.tin.ExampleModClient"
-		]
-	},
-	"mixins": [
-		"mapf_mod.mixins.json",
-		{
-			"config": "mapf_mod.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.17.3",
-		"minecraft": "~1.21.10",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "mapf_mod",
+  "version": "1.0.0",
+  "name": "MAPF Mod",
+  "entrypoints": {
+    "main": [ "com.tin.ExampleMod" ]
+  },
+  "mixins": [
+    "mapf_mod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.21.10"
+  }
 }

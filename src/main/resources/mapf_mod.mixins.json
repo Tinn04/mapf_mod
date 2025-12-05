@@ -1,14 +1,12 @@
 {
-	"required": true,
-	"package": "com.tin.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tin.mixin",
+  "refmap": "mapf_mod.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "VillagerGoalMixin"
+  ],
+  "client": [],
+  "injectors": { "defaultRequire": 1 }
 }
