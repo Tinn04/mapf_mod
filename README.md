@@ -5,6 +5,7 @@ This mod aims to add **cooperative pathfinding** to specific Minecraft mobs usin
 Quick Info (in-game)
 
 Reset (this is always recommended before a new experiment)
+
 /mapf reset
 
 Build the arena. Best practice is to press F3 and check your Y-coordinate.
