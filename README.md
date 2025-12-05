@@ -3,7 +3,6 @@
 This mod aims to add **cooperative pathfinding** to specific Minecraft mobs using Multi-Agent Path Finding (MAPF) concepts.
 
 Quick Info (in-game)
-
 Reset (this is always recommended before a new experiment)
 
 /mapf reset
@@ -11,7 +10,6 @@ Reset (this is always recommended before a new experiment)
 Build the arena. Best practice is to press F3 and check your Y-coordinate.
 
 /mapf arena Y (grid size)
-
 So if you do /mapf arena 63 33, it will generate a 33x33 arena on Y = 63.
 
 You can then add your obstacles afterwards.
