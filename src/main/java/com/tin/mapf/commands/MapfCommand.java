@@ -24,6 +24,8 @@ import net.minecraft.world.scores.Scoreboard;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Blocks;
 
+import com.tin.mapf.log.ExpLog;
+
 import java.util.*;
 
 /**
@@ -31,9 +33,12 @@ import java.util.*;
  * colored glow & nametags, start/stop/reset, arena builder, and QoL helpers.
  */
 public final class MapfCommand {
+    //start pos
+    public static final Map<UUID, BlockPos> START_POS = new HashMap<>();
     // Core state
     public static final Set<UUID> AGENTS = new HashSet<>();
     public static final Map<UUID, CellKey> GOALS = new HashMap<>();
+    public static final Map<UUID, Boolean> ARRIVED = new HashMap<>();
 
     // ---- Named agents ----
     private static final Map<String, UUID> AGENT_BY_NAME = new HashMap<>();
@@ -59,7 +64,7 @@ public final class MapfCommand {
 
                     // /mapf arena <feetY> <size> [keep]
                     .then(Commands.literal("arena")
-                            .then(Commands.argument("feetY", IntegerArgumentType.integer(0, 319))
+                            .then(Commands.argument("feetY", IntegerArgumentType.integer(-64, 319))
                                     .then(Commands.argument("size", IntegerArgumentType.integer(6, 256))
                                             // Normal: build floor + clear air + border
                                             .executes(ctx -> {
@@ -184,9 +189,11 @@ public final class MapfCommand {
                                             removeFreeze(e);
                                             releaseName(id);
                                             GOALS.remove(id);
+                                            ARRIVED.remove(id);
                                             ctx.getSource().sendSuccess(() -> colored("Removed " + name + " (" + id + ")", col), true);
                                         } else {
                                             // ON
+
                                             AGENTS.add(id);
                                             String name = assignName(id);
                                             applyGlowAndTeam(ctx.getSource(), e);
@@ -288,8 +295,16 @@ public final class MapfCommand {
                             ctx.getSource().sendFailure(text("Set arena first: /mapf arena <feetY>"));
                             return 0;
                         }
+                        CoopPlanner.STEPS.clear();
+                        CoopPlanner.LAST_CELL.clear();
+                        //ARRIVED.clear();
+                        CommandSourceStack src = ctx.getSource();
+                        ServerLevel level = src.getLevel();
+                        ExpLog.initFor(level);
                         for (UUID id : AGENTS) {
                             LivingEntity e = (LivingEntity) ctx.getSource().getLevel().getEntity(id);
+                            START_POS.put(id, e.blockPosition());// record start position
+                            ARRIVED.put(id, false); // init goal statu
                             if (e != null) removeFreeze(e);
                         }
                         CoopPlanner.setRunning(true);
@@ -323,6 +338,9 @@ public final class MapfCommand {
                         }
                         AGENTS.clear();
                         GOALS.clear();
+                        ARRIVED.clear();
+                        CoopPlanner.STEPS.clear();
+                        CoopPlanner.LAST_CELL.clear();
                         CoopPlanner.resetAll();
                         ctx.getSource().sendSuccess(() -> text("MAPF state reset."), true);
                         return 1;
@@ -339,12 +357,93 @@ public final class MapfCommand {
                                     })
                             )
                     )
+                    .then(Commands.literal("tp")
+                            .then(Commands.argument("who", StringArgumentType.word())
+                                    .then(Commands.argument("x", IntegerArgumentType.integer())
+                                            .then(Commands.argument("z", IntegerArgumentType.integer())
+                                                    .executes(ctx -> {
+                                                        UUID id = resolveAgentByNameOrUuid(StringArgumentType.getString(ctx, "who"));
+                                                        if (id == null) { ctx.getSource().sendFailure(text("Unknown agent")); return 0; }
+
+                                                        int x = IntegerArgumentType.getInteger(ctx, "x");
+                                                        int z = IntegerArgumentType.getInteger(ctx, "z");
+                                                        int y = CoopPlanner.arenaFeetY(); // feetY
+
+                                                        var ent = ctx.getSource().getLevel().getEntity(id);
+                                                        if (ent instanceof LivingEntity le) {
+                                                            le.teleportTo(x + 0.5, y, z + 0.5);
+                                                            le.setDeltaMovement(0,0,0);// stop movement
+                                                            addFreeze(le); // keep them frozen after teleport
+                                                        }
+                                                        return 1;
+                                                    })
+                                            ))))
+                    .then(Commands.literal("back")
+                            .executes(ctx -> {
+                                var level = ctx.getSource().getLevel();
+                                CoopPlanner.setRunning(false);
+                                for (UUID id : AGENTS) {
+                                    var ent = level.getEntity(id);
+                                    var pos = START_POS.get(id);
+
+                                    if (ent instanceof LivingEntity le && pos != null) {
+                                        addFreeze(le);
+
+                                        le.teleportTo(
+                                                pos.getX() + 0.5,
+                                                pos.getY(),
+                                                pos.getZ() + 0.5
+                                        );
+                                        //le.setDeltaMovement(0, 0, 0);
+                                    }
+                                }
+
+                                ctx.getSource().sendSuccess(
+                                        () -> Component.literal("Agents moved back to start positions."),
+                                        true
+                                );
+                                return 1;
+                            })
+                    )
+                    .then(Commands.literal("obstacles")
+                            .then(Commands.argument("densityP", IntegerArgumentType.integer())
+                                    .then(Commands.argument("seed", IntegerArgumentType.integer())
+                                            .executes(ctx -> {
+                                                var level = ctx.getSource().getLevel();
+                                                Random rng = new Random(IntegerArgumentType.getInteger(ctx, "seed"));
+                                                BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+                                                double d = IntegerArgumentType.getInteger(ctx, "densityP") / 100.0;
+
+                                                for (int x = CoopPlanner.minX(); x <= CoopPlanner.maxX(); x++) {
+                                                    for (int z = CoopPlanner.minZ(); z <= CoopPlanner.maxZ(); z++) {
+
+                                                        // keep the cell clear?
+                                                        boolean block = rng.nextDouble() < d;
+
+                                                        // obstacle at FEET layer blocks walkability
+                                                        pos.set(x, CoopPlanner.arenaFeetY(), z);
+                                                        level.setBlock(pos,
+                                                                block ? Blocks.STONE.defaultBlockState()
+                                                                        : Blocks.AIR.defaultBlockState(),
+                                                                18);
+                                                        pos.set(x, CoopPlanner.arenaFeetY() + 1, z);
+                                                        level.setBlock(pos,
+                                                                block ? Blocks.STONE.defaultBlockState()
+                                                                        : Blocks.AIR.defaultBlockState(),
+                                                                18);
+                                                    }
+                                                }
+                                                return 1;
+                                            }
+                                    ))))
+
 
                     // /mapf logrun  (manual run snapshot)
                     .then(Commands.literal("logrun")
                             .executes(ctx -> {
                                 int gridW = com.tin.mapf.plan.CoopPlanner.maxX() - com.tin.mapf.plan.CoopPlanner.minX() + 1;
                                 int gridH = com.tin.mapf.plan.CoopPlanner.maxZ() - com.tin.mapf.plan.CoopPlanner.minZ() + 1;
+
                                 com.tin.mapf.log.ExpLog.logRun(com.tin.mapf.log.ExpLog.map(
                                         "ts_real_ms", System.currentTimeMillis(),
                                         "session",    com.tin.mapf.log.ExpLog.SESSION.get(),

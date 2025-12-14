@@ -25,7 +25,7 @@ public final class ExpLog {
                 "feetY","minX","maxX","minZ","maxZ","grid_w","grid_h",
                 "agent_name","agent_uuid","sx","sz","gx","gz","manhattan",
                 "time_ms","nodes_expanded","planned_len","reserved_prefix_len",
-                "success","at_goal","goal_cleared","cbs_splits"));
+                "success","at_goal","goal_cleared","cbs_splits", "steps"));
 
         RUNS.writeHeader(String.join(",",
                 "ts_real_ms","session","label","algo","R","W",
