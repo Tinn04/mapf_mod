@@ -15,6 +15,21 @@ public final class PlanExecutor {
         var c = nextOpt.get();
         double tx = c.x + 0.5, tz = c.z + 0.5;
 
+        // step counter
+        int cx = (int) Math.floor(mob.getX());
+        int cz = (int) Math.floor(mob.getZ());
+        String curCell = cx + "," + cz;
+
+        String last = CoopPlanner.LAST_CELL.get(mob.getUUID());
+        if (last == null){
+            CoopPlanner.LAST_CELL.put(mob.getUUID(), curCell);
+            CoopPlanner.STEPS.put(mob.getUUID(), 0);
+        }
+        else if (!last.equals(curCell)) {
+            CoopPlanner.LAST_CELL.put(mob.getUUID(), curCell);
+            CoopPlanner.STEPS.merge(mob.getUUID(), 1, Integer::sum);
+        }
+
         // horizontal distance to the center of the reserved cell
         double dx = tx - mob.getX();
         double dz = tz - mob.getZ();

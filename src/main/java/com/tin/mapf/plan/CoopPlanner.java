@@ -24,6 +24,8 @@ public final class CoopPlanner {
     private static GridBuilder GRID = null;        // expects feetY (air) in ctor
     private static int ARENA_FEET_Y = -1;          // -1 = not configured yet
     private static int MIN_X = 0, MAX_X = -1, MIN_Z = 0, MAX_Z = -1;
+    public static final Map<UUID, Integer> STEPS = new HashMap<>();
+    public static final Map<UUID, String> LAST_CELL = new HashMap<>();
 
     // Start and Stop
     private static boolean RUNNING = false;
@@ -79,7 +81,7 @@ public final class CoopPlanner {
     }
 
     // ---- Accessors used by executor/commands ----
-    public static boolean hasArena() { return GRID != null && ARENA_FEET_Y >= 0 && MIN_X <= MAX_X && MIN_Z <= MAX_Z; }
+    public static boolean hasArena() { return GRID != null && ARENA_FEET_Y >= -64 && MIN_X <= MAX_X && MIN_Z <= MAX_Z; }
     public static int arenaFeetY() { return ARENA_FEET_Y; }
     public static int minX() { return MIN_X; }
     public static int maxX() { return MAX_X; }
@@ -109,7 +111,7 @@ public final class CoopPlanner {
 
         for (UUID id : MapfCommand.AGENTS) {
             CellKey goal = MapfCommand.GOALS.get(id);
-            if (goal == null) continue;
+            if (goal == null || MapfCommand.ARRIVED.getOrDefault(id, false)) continue;
             if (!inBounds(goal.x, goal.z)) continue;  // ignore out-of-bounds goals
 
             Entity e = LEVEL.getEntity(id);
@@ -123,7 +125,8 @@ public final class CoopPlanner {
                 sz = Math.max(MIN_Z, Math.min(MAX_Z, sz));
             }
 
-            if (sx == goal.x && sz == goal.z) {
+            if (sx == goal.x && sz == goal.z && !MapfCommand.ARRIVED.getOrDefault(id, false)) {
+                MapfCommand.ARRIVED.put(id, true);
                 int nowInt = (int) now;
 
                 var hold = java.util.List.of(new ReservationKey(new CellKey(sx, sz), nowInt + 1));
@@ -131,8 +134,9 @@ public final class CoopPlanner {
                 ACTIVE.put(id, hold);
 
                 com.tin.mapf.commands.MapfCommand.freezeById(LEVEL, id);
-                com.tin.mapf.commands.MapfCommand.GOALS.remove(id);
+                //com.tin.mapf.commands.MapfCommand.GOALS.remove(id);
                 int gridW = (maxX() - minX() + 1), gridH = (maxZ() - minZ() + 1);
+
                 ExpLog.logPlan(ExpLog.map(
                         "ts_real_ms", System.currentTimeMillis(),
                         "tick_now",   now,
@@ -155,7 +159,8 @@ public final class CoopPlanner {
                         "success", 1,
                         "at_goal", 1,
                         "goal_cleared", 1,
-                        "cbs_splits", 0
+                        "cbs_splits", 0,
+                        "steps", STEPS.getOrDefault(id, 0)
                 ));
                 continue;
             }
@@ -183,6 +188,7 @@ public final class CoopPlanner {
             boolean atGoal = (sx == goal.x && sz == goal.z);
             boolean success = !plan.isEmpty();
             int splits = (CURRENT == com.tin.mapf.plan.Algo.CBS) ? com.tin.mapf.plan.CbsPlanner.cbsSplitsLast : 0;
+
 
 // reserve only a prefix when windowed / periodic replanning
             int prefixLen = success
@@ -212,7 +218,8 @@ public final class CoopPlanner {
                     "success", success ? 1 : 0,
                     "at_goal", atGoal ? 1 : 0,
                     "goal_cleared", 0,
-                    "cbs_splits", splits
+                    "cbs_splits", splits,
+                    "steps", STEPS.getOrDefault(id, 0)
             ));
 
             if (success) {
@@ -242,6 +249,17 @@ public final class CoopPlanner {
             }
 
 
+        }
+        boolean allDone = true;
+        for (UUID id2 : MapfCommand.AGENTS) {
+            if (MapfCommand.GOALS.get(id2) != null && !MapfCommand.ARRIVED.getOrDefault(id2, false)) {
+                allDone = false;
+                break;
+            }
+        }
+        if (allDone) {
+            setRunning(false);
+            System.out.println("[MAPF] All agents arrived. Stopping at tick=" + now);
         }
     }
     public static Optional<CellKey> goalOf(UUID id) {
