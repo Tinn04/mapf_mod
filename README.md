@@ -93,3 +93,14 @@ everything and give you a fresh start.
 Now you can repeat everything once again.
 
 Your logs will be saved into a CSV inside run/save/"world_name"/mapf_logs
+
+/mapf tp who x z 
+allow you to tp agents to (x,z)
+e.g. /mapf tp Agent1 -4 0
+
+/mapf obstacle density(%) seed 
+ranomly put obstacle in arena with density percentage
+e.g. /mapf obstacle 20 123
+
+/mapf back
+move all agent to their start position, may have some bug
